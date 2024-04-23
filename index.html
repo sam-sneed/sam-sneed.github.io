@@ -50,7 +50,9 @@
         loadBlogPost(post.url);
       };
       link.innerText = title;
+      const br = document.createElement('br')
       blogList.appendChild(link);
+      document.appendChild(br);
     });
   }
 
@@ -70,9 +72,7 @@
 
   // Function to go back to the main page
   function goBack() {
-    document.body.innerHTML = '';
-    createBlogPostLinks(); // Recreate blog post links
-    document.title = 'Blog'; // Change title back to default
+    location.reload();
   }
 
   // Initialize the page
