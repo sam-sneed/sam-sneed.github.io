@@ -20,9 +20,12 @@
 
 <script src="frontend.js"></script>
 <script>
+  const copyrightName = "Sneed Group"
+  const githubUsername = "sam-sneed"
+  const githubRepoName = "blog-posts"
   // Fetch list of blog posts from GitHub repository
   async function fetchBlogPosts() {
-    const response = await fetch('https://api.github.com/repos/sam-sneed/blog-posts/contents');
+    const response = await fetch(`https://api.github.com/repos/${githubUsername}/${githubRepoName}/contents`);
     const data = await response.json();
     // Filter out Markdown files and extract titles and URLs
     const blogPosts = data
@@ -52,8 +55,9 @@
       link.innerText = title;
       const br = document.createElement('br')
       blogList.appendChild(link);
-      document.appendChild(br);
+      blogList.appendChild(br);
     });
+    document.innerHTML = document.innerHTML + `</hr>Copyright ${copyrightName}. All rights reserved.`
   }
 
   // Function to load blog post content
