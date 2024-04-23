@@ -1,2 +1,2 @@
 # sam-sneed.github.io
-Sneed Group blog
+Code for Sneed Group blog
