@@ -57,7 +57,11 @@
       blogList.appendChild(link);
       blogList.appendChild(br);
     });
-    document.body.innerHTML += `<hr></hr>Copyright ${copyrightName}. All rights reserved.`
+    const horiz = document.createElement("hr")
+    document.body.appendChild(hr)
+    const copyright = document.createElement("p");
+    copyright.innerText = `Copyright ${copyrightName}. All rights reserved.`;
+    document.body.appendChild(copyright)
   }
 
   // Function to load blog post content
